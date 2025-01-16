@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Special-Education-Presentation/static/css/main.d61d99aa.css",
+    "main.js": "/Special-Education-Presentation/static/js/main.d23eaf2c.js",
+    "static/media/image2.jpg": "/Special-Education-Presentation/static/media/image2.702d0d652b0d992c77e4.jpg",
+    "static/media/logo.svg": "/Special-Education-Presentation/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Special-Education-Presentation/index.html",
+    "main.d61d99aa.css.map": "/Special-Education-Presentation/static/css/main.d61d99aa.css.map",
+    "main.d23eaf2c.js.map": "/Special-Education-Presentation/static/js/main.d23eaf2c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d61d99aa.css",
+    "static/js/main.d23eaf2c.js"
+  ]
+}

@@ -1458,7 +1458,17 @@ const Presentation = () => {
                 border: "1px solid #BEE3F8",
               }}
             >
-              סך הכל מסגרות מוכש"ר בירושלים ומתוכם רק{" "}
+              סך הכל מסגרות מוכש"ר בירושלים  {" "}
+              <span
+                style={{
+                  color: "#2B6CB0",
+                  fontWeight: "bold",
+                  fontSize: "1.6rem",
+                }}
+              >
+                71 
+              </span>{" "}
+               ומתוכם רק{" "}
               <span
                 style={{
                   color: "#2B6CB0",

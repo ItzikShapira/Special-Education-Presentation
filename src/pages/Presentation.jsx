@@ -15,7 +15,7 @@ import im2 from "../pictures/image2.jpg";
 
 const Presentation = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
- 
+
   const boysData = [
     {
       institutionSymbol: 142935,
@@ -223,17 +223,17 @@ const Presentation = () => {
             <h2 className="presentation-subtitle">מצגת נתונים שנתית</h2>
             <div className="separator"></div>
           </div>
-          <div className="presenters-container">
+          <div class="presenters-container">
             <h3>מגישות:</h3>
-            <div className="presenter-info">
-              <p>שולמית אריאלי</p>
-              <p className="presenter-title">מפקחת חינוך מיוחד ירושלים</p>
-            </div>
-            <div className="presenter-info">
-              <p>בתיה שפירא</p>
-              <p className="presenter-title">
-                ממונה חינוך מיוחד עיריית ירושלים
-              </p>
+            <div class="presenter-list">
+              <div class="presenter-info">
+                <p>שולמית אריאלי</p>
+                <p class="presenter-title">מפקחת חינוך מיוחד ירושלים</p>
+              </div>
+              <div class="presenter-info">
+                <p>בתיה שפירא</p>
+                <p class="presenter-title">ממונה חינוך מיוחד עיריית ירושלים</p>
+              </div>
             </div>
           </div>
         </div>
@@ -265,10 +265,6 @@ const Presentation = () => {
       title: "נתוני ועדות לתשפ״ה",
       content: () => (
         <div className="data-slide">
-          <div className="note-box">
-            <p>הועדות מתקיימות למשך כל השנה, כך שאין התארגנות מיטבית.</p>
-            <p>קליטת תלמידים מתבצעת לאורך כל השנה, ללא משאבים.</p>
-          </div>
           <div className="stats-grid">
             <div className="stats-card">
               <h3>גיל הרך חדש</h3>
@@ -286,7 +282,7 @@ const Presentation = () => {
                   <span className="stat-value">158</span>
                 </div>
                 <div className="stat-row">
-                  <span>שירותי חינוך מיוחדים:</span>
+                  <span>זכאים לשירותי חינוך מיוחדים:</span>
                   <span className="stat-value">854</span>
                 </div>
               </div>
@@ -307,7 +303,7 @@ const Presentation = () => {
                   <span className="stat-value">62</span>
                 </div>
                 <div className="stat-row">
-                  <span>שירותי חינוך מיוחדים:</span>
+                  <span>זכאים לשירותי חינוך מיוחדים:</span>
                   <span className="stat-value">522</span>
                 </div>
               </div>
@@ -328,73 +324,279 @@ const Presentation = () => {
                   <span className="stat-value">34</span>
                 </div>
                 <div className="stat-row">
-                  <span>שירותי חינוך מיוחדים:</span>
+                  <span>זכאים לשירותי חינוך מיוחדים:</span>
                   <span className="stat-value">265</span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="stats-card frequencies">
-            <h3>שכיחויות</h3>
-            <div className="frequencies-grid">
-              <div>
-                <h4>גיל הרך</h4>
-                <div className="stat-row">
-                  <span>שכיחות גבוהה:</span>
-                  <span className="stat-value">821</span>
+          <div
+            style={{ fontSize: "1.4rem", maxWidth: "1200px", margin: "0 auto" }}
+          >
+            <div
+              className="stats-card frequencies"
+              style={{
+                backgroundColor: "#f8fafc",
+                borderRadius: "12px",
+                padding: "1.5rem",
+                marginBottom: "2rem",
+                boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: "1.8rem",
+                  marginBottom: "1.5rem",
+                  color: "#2d3748",
+                  textAlign: "center",
+                }}
+              >
+                שכיחויות
+              </h3>
+
+              <div
+                className="frequencies-grid"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  gap: "2rem",
+                  flexWrap: "wrap",
+                }}
+              >
+                {/* גיל הרך */}
+                <div style={{ minWidth: "250px" }}>
+                  <h4
+                    style={{
+                      fontSize: "1.6rem",
+                      marginBottom: "1rem",
+                      color: "#4a5568",
+                      borderBottom: "2px solid #e2e8f0",
+                      paddingBottom: "0.5rem",
+                    }}
+                  >
+                    גיל הרך
+                  </h4>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      gap: "1rem",
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    <span>שכיחות גבוהה:</span>
+                    <span style={{ fontWeight: "bold", color: "#2b6cb0" }}>
+                      821
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      gap: "1rem",
+                    }}
+                  >
+                    <span>שכיחות נמוכה:</span>
+                    <span style={{ fontWeight: "bold", color: "#2b6cb0" }}>
+                      229
+                    </span>
+                  </div>
                 </div>
-                <div className="stat-row">
-                  <span>שכיחות נמוכה:</span>
-                  <span className="stat-value">229</span>
+
+                {/* יסודי */}
+                <div style={{ minWidth: "250px" }}>
+                  <h4
+                    style={{
+                      fontSize: "1.6rem",
+                      marginBottom: "1rem",
+                      color: "#4a5568",
+                      borderBottom: "2px solid #e2e8f0",
+                      paddingBottom: "0.5rem",
+                    }}
+                  >
+                    יסודי
+                  </h4>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      gap: "1rem",
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    <span>שכיחות גבוהה:</span>
+                    <span style={{ fontWeight: "bold", color: "#2b6cb0" }}>
+                      821
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      gap: "1rem",
+                    }}
+                  >
+                    <span>שכיחות נמוכה:</span>
+                    <span style={{ fontWeight: "bold", color: "#2b6cb0" }}>
+                      229
+                    </span>
+                  </div>
+                </div>
+
+                {/* על יסודי */}
+                <div style={{ minWidth: "250px" }}>
+                  <h4
+                    style={{
+                      fontSize: "1.6rem",
+                      marginBottom: "1rem",
+                      color: "#4a5568",
+                      borderBottom: "2px solid #e2e8f0",
+                      paddingBottom: "0.5rem",
+                    }}
+                  >
+                    על יסודי
+                  </h4>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      gap: "1rem",
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    <span>שכיחות גבוהה:</span>
+                    <span style={{ fontWeight: "bold", color: "#2b6cb0" }}>
+                      396
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      gap: "1rem",
+                    }}
+                  >
+                    <span>שכיחות נמוכה:</span>
+                    <span style={{ fontWeight: "bold", color: "#2b6cb0" }}>
+                      197
+                    </span>
+                  </div>
                 </div>
               </div>
-              <div>
-                <h4>יסודי</h4>
-                <div className="stat-row">
-                  <span>שכיחות גבוהה:</span>
-                  <span className="stat-value">821</span>
-                </div>
-                <div className="stat-row">
-                  <span>שכיחות נמוכה:</span>
-                  <span className="stat-value">229</span>
-                </div>
-              </div>
-              <div>
-                <h4>על יסודי</h4>
-                <div className="stat-row">
-                  <span>שכיחות גבוהה:</span>
-                  <span className="stat-value">396</span>
-                </div>
-                <div className="stat-row">
-                  <span>שכיחות נמוכה:</span>
-                  <span className="stat-value">197</span>
+            </div>
+
+            {/* Total Discussions Section */}
+            <div
+              className="total-discussions"
+              style={{
+                backgroundColor: "#f8fafc",
+                borderRadius: "12px",
+                padding: "1.5rem",
+                boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+              }}
+            >
+              <div className="stats-card">
+                <h3
+                  style={{
+                    fontSize: "1.8rem",
+                    marginBottom: "1.5rem",
+                    color: "#2d3748",
+                    textAlign: "center",
+                  }}
+                >
+                  סה״כ דיונים לתלמידים חדשים
+                </h3>
+
+                <div
+                  style={{
+                    maxWidth: "400px",
+                    margin: "0 auto",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      gap: "2rem",
+                      marginBottom: "0.8rem",
+                      borderBottom: "1px solid #e2e8f0",
+                      paddingBottom: "0.5rem",
+                    }}
+                  >
+                    <span>גיל הרך:</span>
+                    <span style={{ fontWeight: "bold", color: "#2b6cb0" }}>
+                      1050
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      gap: "2rem",
+                      marginBottom: "0.8rem",
+                      borderBottom: "1px solid #e2e8f0",
+                      paddingBottom: "0.5rem",
+                    }}
+                  >
+                    <span>יסודי:</span>
+                    <span style={{ fontWeight: "bold", color: "#2b6cb0" }}>
+                      593
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      gap: "2rem",
+                      marginBottom: "0.8rem",
+                      borderBottom: "1px solid #e2e8f0",
+                      paddingBottom: "0.5rem",
+                    }}
+                  >
+                    <span>על יסודי:</span>
+                    <span style={{ fontWeight: "bold", color: "#2b6cb0" }}>
+                      303
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      gap: "2rem",
+                      marginTop: "1rem",
+                      paddingTop: "0.5rem",
+                      borderTop: "2px solid #2b6cb0",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    <span>סך הכל:</span>
+                    <span
+                      style={{
+                        fontWeight: "bold",
+                        color: "#2b6cb0",
+                        fontSize: "1.6rem",
+                      }}
+                    >
+                      1946
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="total-discussions">
-            <div className="stats-card">
-              <h3>סה״כ דיונים לתלמידים חדשים</h3>
-              <div className="stats-content">
-                <div className="stat-row">
-                  <span>גיל הרך</span>
-                  <span className="stat-value">1050</span>
-                </div>
-                <div className="stat-row">
-                  <span>יסודי:</span>
-                  <span className="stat-value">593</span>
-                </div>
-                <div className="stat-row">
-                  <span>על יסודי:</span>
-                  <span className="stat-value">303</span>
-                </div>
-                <div className="stat-row">
-                  <span>סך הכל: </span>
-                  <span className="stat-value">1946</span>
-                </div>
-              </div>
-            </div>
+          <div className="note-box">
+            <p>הועדות מתקיימות למשך כל השנה, כך שאין התארגנות מיטבית.</p>
+            <p>קליטת תלמידים מתבצעת לאורך כל השנה, ללא משאבים.</p>
           </div>
         </div>
       ),
@@ -464,116 +666,614 @@ const Presentation = () => {
     {
       title: "נתוני חינוך מיוחד",
       content: () => (
-        <div className="special-ed-data">
+        <div className="special-ed-data" style={{ padding: "20px" }}>
+          {/* גיל הרך */}
           <div className="stats-section">
-            <h3>גיל הרך</h3>
-            <div className="stats-grid">
-              <div className="stat-item">
-                <span>מס׳ בעליות:</span>
-                <span className="number">167</span>
+            <h3
+              style={{
+                fontSize: "24px",
+                fontWeight: "bold",
+                marginBottom: "20px",
+              }}
+            >
+              גיל הרך
+            </h3>
+            <div
+              className="stats-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gap: "20px",
+                marginBottom: "30px",
+              }}
+            >
+              <div
+                className="stat-item"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  padding: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
+                <span>מס׳ בעלויות:</span>
+                <span
+                  className="number"
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                  }}
+                >
+                  16
+                </span>
               </div>
-              <div className="stat-item">
+              <div
+                className="stat-item"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  padding: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
                 <span>מס׳ גנים:</span>
-                <span className="number">16</span>
+                <span
+                  className="number"
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                  }}
+                >
+                  167
+                </span>
               </div>
-              <div className="stat-item">
+              <div
+                className="stat-item"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  padding: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
                 <span>מס׳ תלמידים:</span>
-                <span className="number">1523</span>
+                <span
+                  className="number"
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                  }}
+                >
+                  1523
+                </span>
               </div>
             </div>
           </div>
+
+          {/* כוללני */}
           <div className="stats-section">
-            <h3>כוללני</h3>
-            <div className="stats-grid">
-              <div className="stat-item">
+            <h3
+              style={{
+                fontSize: "24px",
+                fontWeight: "bold",
+                marginBottom: "20px",
+              }}
+            >
+              כוללני
+            </h3>
+            <div
+              className="stats-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gap: "20px",
+                marginBottom: "30px",
+              }}
+            >
+              <div
+                className="stat-item"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  padding: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
                 <span>מס׳ מסגרות:</span>
-                <span className="number">35</span>
+                <span
+                  className="number"
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                  }}
+                >
+                  35
+                </span>
               </div>
-              <div className="stat-item">
+              <div
+                className="stat-item"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  padding: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
                 <span>מס׳ כיתות:</span>
-                <span className="number">316</span>
+                <span
+                  className="number"
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                  }}
+                >
+                  316
+                </span>
               </div>
-              <div className="stat-item">
+              <div
+                className="stat-item"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  padding: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
                 <span>מס׳ תלמידים:</span>
-                <span className="number">2268</span>
-              </div>
-            </div>
-          </div>{" "}
-          <div className="stats-section">
-            <h3>יסודי - מקדמות</h3>
-            <div className="stats-grid">
-              <div className="stat-item">
-                <span>מס׳ מסגרות:</span>
-                <span className="number">33</span>
-              </div>
-              <div className="stat-item">
-                <span>מס׳ כיתות:</span>
-                <span className="number">125</span>
-              </div>
-              <div className="stat-item">
-                <span>מס׳ תלמידים:</span>
-                <span className="number">1055</span>
-              </div>
-            </div>
-          </div>{" "}
-          <div className="stats-section">
-            <h3>על יסודי - מקדמות</h3>
-            <div className="stats-grid">
-              <div className="stat-item">
-                <span>מס׳ מסגרות:</span>
-                <span className="number">11</span>
-              </div>
-              <div className="stat-item">
-                <span>מס׳ כיתות:</span>
-                <span className="number">52</span>
-              </div>
-              <div className="stat-item">
-                <span>מס׳ תלמידים:</span>
-                <span className="number">479</span>
+                <span
+                  className="number"
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                  }}
+                >
+                  2268
+                </span>
               </div>
             </div>
           </div>
+
+          {/* יסודי - מקדמות */}
+          <div className="stats-section">
+            <h3
+              style={{
+                fontSize: "24px",
+                fontWeight: "bold",
+                marginBottom: "20px",
+              }}
+            >
+              יסודי - מקדמות
+            </h3>
+            <div
+              className="stats-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gap: "20px",
+                marginBottom: "30px",
+              }}
+            >
+              <div
+                className="stat-item"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  padding: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
+                <span>מס׳ מסגרות:</span>
+                <span
+                  className="number"
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                  }}
+                >
+                  33
+                </span>
+              </div>
+              <div
+                className="stat-item"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  padding: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
+                <span>מס׳ כיתות:</span>
+                <span
+                  className="number"
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                  }}
+                >
+                  125
+                </span>
+              </div>
+              <div
+                className="stat-item"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  padding: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
+                <span>מס׳ תלמידים:</span>
+                <span
+                  className="number"
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                  }}
+                >
+                  1055
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* על יסודי - מקדמות */}
+          <div className="stats-section">
+            <h3
+              style={{
+                fontSize: "24px",
+                fontWeight: "bold",
+                marginBottom: "20px",
+              }}
+            >
+              על יסודי - מקדמות
+            </h3>
+            <div
+              className="stats-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gap: "20px",
+                marginBottom: "30px",
+              }}
+            >
+              <div
+                className="stat-item"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  padding: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
+                <span>מס׳ מסגרות:</span>
+                <span
+                  className="number"
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                  }}
+                >
+                  11
+                </span>
+              </div>
+              <div
+                className="stat-item"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  padding: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
+                <span>מס׳ כיתות:</span>
+                <span
+                  className="number"
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                  }}
+                >
+                  52
+                </span>
+              </div>
+              <div
+                className="stat-item"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  padding: "10px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
+                <span>מס׳ תלמידים:</span>
+                <span
+                  className="number"
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                  }}
+                >
+                  479
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* סך הכל תלמידים בתקצוב אישי */}
           <div className="stats-grid">
-            <div className="stats-card">
-              <h3>סך הכל תלמידים בתקצוב אישי במסגרות החינוך הרגיל</h3>
-              <div className="stats-content">
-                <div className="stat-row">
+            <div
+              style={{
+                backgroundColor: "#f8f9fa",
+                padding: "20px",
+                borderRadius: "10px",
+                width: "100%",
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: "24px",
+                  fontWeight: "bold",
+                  marginBottom: "20px",
+                }}
+              >
+                סך הכל תלמידים בתקצוב אישי במסגרות החינוך הרגיל
+              </h3>
+              <div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    fontSize: "20px",
+                    margin: "10px 0",
+                  }}
+                >
                   <span>פטור: </span>
-                  <span className="stat-value">269</span>
+                  <span
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: "bold",
+                      color: "#2c5282",
+                    }}
+                  >
+                    269
+                  </span>
                 </div>
-                <div className="stat-row">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    fontSize: "20px",
+                    margin: "10px 0",
+                  }}
+                >
                   <span>תרבותי יחודי: </span>
-                  <span className="stat-value">51</span>
+                  <span
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: "bold",
+                      color: "#2c5282",
+                    }}
+                  >
+                    51
+                  </span>
                 </div>
-                <div className="stat-row">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    fontSize: "20px",
+                    margin: "10px 0",
+                  }}
+                >
                   <span>מוכש"ר: </span>
-                  <span className="stat-value">1960</span>
+                  <span
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: "bold",
+                      color: "#2c5282",
+                    }}
+                  >
+                    1960
+                  </span>
                 </div>
-                <div className="stat-row">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    fontSize: "20px",
+                    margin: "10px 0",
+                  }}
+                >
                   <span>סך הכל: </span>
-                  <span className="stat-value">2280</span>
+                  <span
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: "bold",
+                      color: "#2c5282",
+                    }}
+                  >
+                    2280
+                  </span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="framework-distribution">
-            <h3>מסגרות חינוך מיוחד בהשוואה לכל המסגרות</h3>
-            <div className="distribution-grid">
-              <div className="distribution-item">
-                <span className="percentage"> 21% </span>
-                <span>גני חינוך מיוחד ביחס לכל המגזר החרדי</span>
+
+          {/* מסגרות חינוך מיוחד בהשוואה לכל המסגרות */}
+          <div className="framework-distribution" style={{ marginTop: "30px" }}>
+            <h3
+              style={{
+                fontSize: "24px",
+                fontWeight: "bold",
+                marginBottom: "20px",
+              }}
+            >
+              מסגרות חינוך מיוחד בהשוואה לכל המסגרות
+            </h3>
+            <div
+              className="distribution-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                gap: "20px",
+                marginTop: "20px",
+              }}
+            >
+              <div
+                className="distribution-item"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+                  padding: "15px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
+                <span
+                  className="percentage"
+                  style={{
+                    fontSize: "28px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                    marginBottom: "10px",
+                  }}
+                >
+                  21%
+                </span>
+                <span style={{ fontSize: "18px", lineHeight: "1.4" }}>
+                  גני חינוך מיוחד ביחס לכל המגזר החרדי
+                </span>
               </div>
-              <div className="distribution-item">
-                <span className="percentage"> 24% </span>
-                <span>גני שפה ביחס לכל המגזר החרדי</span>
+              <div
+                className="distribution-item"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+                  padding: "15px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
+                <span
+                  className="percentage"
+                  style={{
+                    fontSize: "28px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                    marginBottom: "10px",
+                  }}
+                >
+                  24%
+                </span>
+                <span style={{ fontSize: "18px", lineHeight: "1.4" }}>
+                  גני שפה ביחס לכל המגזר החרדי
+                </span>
               </div>
-              <div className="distribution-item">
-                <span className="percentage"> 24% </span>
-                <span>בתי ספר כוללנים ביחס לכל המגזר החרדי</span>
+              <div
+                className="distribution-item"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+                  padding: "15px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
+                <span
+                  className="percentage"
+                  style={{
+                    fontSize: "28px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                    marginBottom: "10px",
+                  }}
+                >
+                  24%
+                </span>
+                <span style={{ fontSize: "18px", lineHeight: "1.4" }}>
+                  בתי ספר כוללנים ביחס לכל המגזר החרדי
+                </span>
               </div>
-              <div className="distribution-item">
-                <span className="percentage"> 20% </span>
-                <span>כיתות מקדמות ביחס לכל המגזר החרדי</span>
+              <div
+                className="distribution-item"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+                  padding: "15px",
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "8px",
+                }}
+              >
+                <span
+                  className="percentage"
+                  style={{
+                    fontSize: "28px",
+                    fontWeight: "bold",
+                    color: "#2c5282",
+                    marginBottom: "10px",
+                  }}
+                >
+                  20%
+                </span>
+                <span style={{ fontSize: "18px", lineHeight: "1.4" }}>
+                  כיתות מקדמות ביחס לכל המגזר החרדי
+                </span>
               </div>
             </div>
           </div>
@@ -702,13 +1402,65 @@ const Presentation = () => {
                 </div>
               </div>
             </div>
-            <div className="stats-card gradient-purple">
-              <h3>סה״כ כיתות מקדמות</h3>
-              <div className="total-stat animate-scale">71</div>
-              <p className="stat-note">
-                מתוכן 20 מוסדות מפעילים כיתות מקדמות שנה אחת - 28%
-              </p>
-            </div>
+          </div>
+          <div
+            style={{
+              backgroundColor: "#E6F3FF",
+              border: "2px solid #2B6CB0",
+              borderRadius: "12px",
+              padding: "1.5rem",
+              maxWidth: "800px",
+              margin: "2rem auto",
+              boxShadow: "0 4px 6px rgba(43, 108, 176, 0.1)",
+            }}
+          >
+            <h3
+              style={{
+                color: "#2B6CB0",
+                fontSize: "1.8rem",
+                marginBottom: "1rem",
+                borderBottom: "2px solid #2B6CB0",
+                paddingBottom: "0.5rem",
+                textAlign: "center",
+                fontWeight: "bold",
+              }}
+            >
+              סה״כ כיתות מקדמות
+            </h3>
+            <p
+              style={{
+                fontSize: "1.4rem",
+                lineHeight: "1.6",
+                color: "#2D3748",
+                padding: "1rem",
+                backgroundColor: "white",
+                borderRadius: "8px",
+                border: "1px solid #BEE3F8",
+              }}
+            >
+              סך הכל מסגרות מוכש"ר בירושלים ומתוכם רק{" "}
+              <span
+                style={{
+                  color: "#2B6CB0",
+                  fontWeight: "bold",
+                  fontSize: "1.6rem",
+                }}
+              >
+                20
+              </span>{" "}
+              מסגרות מפעילים כיתות מקדמות שזה אומר{" "}
+              <span
+                style={{
+                  backgroundColor: "#2B6CB0",
+                  color: "white",
+                  padding: "0.2rem 0.8rem",
+                  borderRadius: "20px",
+                  fontWeight: "bold",
+                }}
+              >
+                28%
+              </span>
+            </p>
           </div>
         </div>
       ),
@@ -716,27 +1468,73 @@ const Presentation = () => {
     {
       title: "מקדמות בנות",
       content: () => (
-        <div className="girls-programs">
+        <div className="girls-programs" style={{ fontSize: "1.5rem" }}>
           <div className="data-table-container girls-table-container">
-            <h2 className="table-title girls-table-title">
+            <h2
+              className="table-title girls-table-title"
+              style={{
+                fontSize: "2rem",
+                marginBottom: "1rem",
+              }}
+            >
               נתוני מקדמות בנות - תשפ״ה
             </h2>
           </div>
-          <div className="summary-box">
+          <div
+            className="summary-box"
+            style={{
+              backgroundColor: "#f5f5f5",
+              padding: "1.5rem",
+              borderRadius: "8px",
+            }}
+          >
             <div className="stats-summary">
               <div className="stat-item">
-                <h4>בסיס</h4>
+                <h4
+                  style={{
+                    fontSize: "1.8rem",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  בסיס
+                </h4>
                 <div className="stat-details">
-                  <div className="stat-row">
+                  <div
+                    className="stat-row"
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      gap: "1.5rem",
+                      marginBottom: "0.5rem",
+                      fontSize: "1.5rem",
+                    }}
+                  >
                     <span>מוסדות:</span>
                     <span>13</span>
                   </div>
-
-                  <div className="stat-row">
+                  <div
+                    className="stat-row"
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      gap: "1.5rem",
+                      marginBottom: "0.5rem",
+                      fontSize: "1.5rem",
+                    }}
+                  >
                     <span>כיתות:</span>
                     <span>43</span>
                   </div>
-                  <div className="stat-row">
+                  <div
+                    className="stat-row"
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      gap: "1.5rem",
+                      marginBottom: "0.5rem",
+                      fontSize: "1.5rem",
+                    }}
+                  >
                     <span>תלמידות:</span>
                     <span>383</span>
                   </div>
@@ -745,14 +1543,46 @@ const Presentation = () => {
             </div>
           </div>
 
-          <div className="additional-info">
-            <div className="info-box">
-              <h4>תלמידות מסיימות כיתה ח' - תשפ״ה</h4>
-              <div className="stat-row">
+          <div className="additional-info" style={{ marginTop: "1.5rem" }}>
+            <div
+              className="info-box"
+              style={{
+                backgroundColor: "#f5f5f5",
+                padding: "1.5rem",
+                borderRadius: "8px",
+              }}
+            >
+              <h4
+                style={{
+                  fontSize: "1.8rem",
+                  marginBottom: "0.5rem",
+                }}
+              >
+                תלמידות מסיימות כיתה ח' - תשפ״ה
+              </h4>
+              <div
+                className="stat-row"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  gap: "1.5rem",
+                  marginBottom: "0.5rem",
+                  fontSize: "1.5rem",
+                }}
+              >
                 <span>כיתות:</span>
                 <span>5</span>
-              </div>{" "}
-              <div className="stat-row">
+              </div>
+              <div
+                className="stat-row"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  gap: "1.5rem",
+                  marginBottom: "0.5rem",
+                  fontSize: "1.5rem",
+                }}
+              >
                 <span>תלמידות:</span>
                 <span>44</span>
               </div>
@@ -792,31 +1622,174 @@ const Presentation = () => {
               ))}
             </div>
           </div>
-          <div className="stats-card gradient-green">
-            <h3>גני חינוך מיוחד</h3>
-            <div className="percentage-display animate-scale">15%</div>
-            <p>גני חינוך מיוחד בהשוואה לגנים בירושלים</p>
-            <div className="total-students">סה״כ גנים: 167</div>
-          </div>
+          <div
+            style={{
+              display: "flex",
+              gap: "2rem",
+              flexWrap: "wrap",
+              padding: "1rem",
+            }}
+          >
+            {/* Special Education Card */}
+            <div
+              style={{
+                flex: "1",
+                minWidth: "300px",
+                background: "linear-gradient(135deg, #4ade80 0%, #16a34a 100%)",
+                borderRadius: "16px",
+                padding: "2rem",
+                color: "white",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: "1.8rem",
+                  marginBottom: "1.5rem",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                גני חינוך מיוחד
+              </h3>
 
-          <div className="stats-card gradient-orange">
-            <h3> בנים - מסיימי גנים בתשפ'ה - עולים לכיתה א</h3>
-            <div className="performance-stats animate-slide-up">
-              <div className="performance-row">
-                <span>שכיחות גבוהה:</span>
-                <span className="performance-value">293 (72%)</span>
+              <div
+                style={{
+                  fontSize: "3.5rem",
+                  fontWeight: "bold",
+                  textAlign: "center",
+                  margin: "1.5rem 0",
+                  textShadow: "2px 2px 4px rgba(0,0,0,0.2)",
+                }}
+              >
+                15%
               </div>
-              <div className="performance-row">
-                <span>שכיחות נמוכה (כולל אוטיזם):</span>
-                <span className="performance-value">116 (28%)</span>
+
+              <p
+                style={{
+                  textAlign: "center",
+                  fontSize: "1.2rem",
+                  marginBottom: "2rem",
+                }}
+              >
+                גני חינוך מיוחד בהשוואה לגנים בירושלים
+              </p>
+
+              <div
+                style={{
+                  background: "rgba(255,255,255,0.2)",
+                  padding: "1rem",
+                  borderRadius: "8px",
+                  marginBottom: "0.5rem",
+                  fontSize: "1.2rem",
+                }}
+              >
+                סה״כ גנים מיוחדים: 167
               </div>
-              <div className="performance-row">
-                <span>אוטיזם</span>
-                <span className="performance-value">78 (67%)</span>
+
+              <div
+                style={{
+                  background: "rgba(255,255,255,0.2)",
+                  padding: "1rem",
+                  borderRadius: "8px",
+                  fontSize: "1.2rem",
+                }}
+              >
+                סה״כ גנים רגילים: 1,132
               </div>
-              <div className="success-rate">
-                <span>סה״כ:</span>
-                <span className="performance-value">409</span>
+            </div>
+
+            {/* Boys Statistics Card */}
+            <div
+              style={{
+                flex: "1",
+                minWidth: "300px",
+                background: "linear-gradient(135deg, #fb923c 0%, #ea580c 100%)",
+                borderRadius: "16px",
+                padding: "2rem",
+                color: "white",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: "1.6rem",
+                  marginBottom: "2rem",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                בנים - מסיימי גנים בתשפ'ה - עולים לכיתה א
+              </h3>
+
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1rem",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    background: "rgba(255,255,255,0.2)",
+                    padding: "1rem",
+                    borderRadius: "8px",
+                    fontSize: "1.2rem",
+                  }}
+                >
+                  <span>שכיחות גבוהה:</span>
+                  <span style={{ fontWeight: "bold" }}>293 (72%)</span>
+                </div>
+
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    background: "rgba(255,255,255,0.2)",
+                    padding: "1rem",
+                    borderRadius: "8px",
+                    fontSize: "1.2rem",
+                  }}
+                >
+                  <span>שכיחות נמוכה (כולל אוטיזם):</span>
+                  <span style={{ fontWeight: "bold" }}>116 (28%)</span>
+                </div>
+
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    background: "rgba(255,255,255,0.2)",
+                    padding: "1rem",
+                    borderRadius: "8px",
+                    fontSize: "1.2rem",
+                  }}
+                >
+                  <span>אוטיזם:</span>
+                  <span style={{ fontWeight: "bold" }}>78 (67%)</span>
+                </div>
+
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    background: "rgba(255,255,255,0.3)",
+                    padding: "1rem",
+                    borderRadius: "8px",
+                    fontSize: "1.4rem",
+                    fontWeight: "bold",
+                    marginTop: "1rem",
+                  }}
+                >
+                  <span>סה״כ:</span>
+                  <span>409</span>
+                </div>
               </div>
             </div>
           </div>
@@ -825,9 +1798,91 @@ const Presentation = () => {
     },
     {
       content: () => (
-        <div className="final-slide">
-          <div className="final-message">
-            <h2>יש לנו חינוך מיוחד עבורך</h2>
+        <div
+          style={{
+            minHeight: "100vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background:
+              "linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%)",
+            padding: "2rem",
+            position: "relative",
+            overflow: "hidden",
+          }}
+        >
+          {/* Animated background elements */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              opacity: 0.1,
+              background: `
+              radial-gradient(circle at 20% 20%, white 1%, transparent 6%),
+              radial-gradient(circle at 80% 30%, white 1%, transparent 6%),
+              radial-gradient(circle at 40% 70%, white 1%, transparent 6%),
+              radial-gradient(circle at 70% 80%, white 1%, transparent 6%)
+            `,
+              animation: "sparkle 4s ease-in-out infinite",
+            }}
+          />
+
+          <div
+            className="final-message"
+            style={{
+              maxWidth: "900px",
+              background: "rgba(255, 255, 255, 0.95)",
+              padding: "3rem",
+              borderRadius: "20px",
+              boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
+              transform: "translateY(0)",
+              animation: "float 6s ease-in-out infinite",
+              border: "2px solid rgba(255, 255, 255, 0.2)",
+            }}
+          >
+            <h2
+              style={{
+                fontSize: "2.5rem",
+                color: "#1e40af",
+                textAlign: "center",
+                lineHeight: "1.4",
+                fontWeight: "bold",
+                textShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+                position: "relative",
+                padding: "0 1rem",
+              }}
+            >
+              מחלקת החינוך המיוחד החרדי:
+              <br />
+              <span
+                style={{
+                  background: "linear-gradient(to right, #1e40af, #3b82f6)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  display: "block",
+                  marginTop: "1rem",
+                  fontSize: "2.2rem",
+                }}
+              >
+                מובילים באמונה, ביצירתיות ובתמיכה מותאמת
+              </span>
+            </h2>
+
+            <style>
+              {`
+                @keyframes float {
+                  0%, 100% { transform: translateY(0px); }
+                  50% { transform: translateY(-20px); }
+                }
+                @keyframes sparkle {
+                  0%, 100% { opacity: 0.1; transform: scale(1); }
+                  50% { opacity: 0.2; transform: scale(1.1); }
+                }
+              `}
+            </style>
           </div>
         </div>
       ),

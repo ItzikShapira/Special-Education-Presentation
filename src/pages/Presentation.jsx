@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   BarChart,
@@ -12,9 +12,29 @@ import {
 import "../css/Presentation.css";
 import im from "../pictures/image.jpg";
 import im2 from "../pictures/image2.jpg";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 const Presentation = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const componentRef = useRef();
+
+  const exportToPDF = async () => {
+    const element = componentRef.current;
+
+    // שימוש ב-html2canvas כדי להמיר את הקומפוננטה לתמונה
+    const canvas = await html2canvas(element);
+    const imageData = canvas.toDataURL("image/png");
+
+    // יצירת PDF בעזרת jsPDF
+    const pdf = new jsPDF("portrait", "mm", "a4");
+    const imgWidth = 210; // רוחב הדף ב-mm
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+    pdf.addImage(imageData, "PNG", 0, 0, imgWidth, imgHeight);
+    pdf.save("exported.pdf");
+  };
 
   const boysData = [
     {
@@ -1898,33 +1918,79 @@ const Presentation = () => {
   };
 
   return (
-    <div className="presentation-container">
-      <div className="presentation-content">
-        <div className="slide-container">
-          <h1>{slides[currentSlide].title}</h1>
-
-          {slides[currentSlide].content()}
-
-          <div className="navigation">
-            <button
-              onClick={prevSlide}
-              disabled={currentSlide === 0}
-              className={currentSlide === 0 ? "disabled" : ""}
+    <div ref={componentRef} style={{ padding: "20px", background: "#fff" }}>
+      <div className="presentation-container">
+        <div className="presentation-content">
+          <div className="slide-container">
+          <button
+            onClick={exportToPDF}
+            style={{
+              position: "absolute",
+              top: "20px",
+              right: "20px",
+              padding: "8px 16px",
+              background: "rgba(255, 255, 255, 0.9)",
+              border: "1px solid #e2e8f0",
+              borderRadius: "8px",
+              color: "#2d3748",
+              fontSize: "0.9rem",
+              cursor: "pointer",
+              transition: "all 0.2s ease",
+              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.05)",
+              display: "flex",
+              alignItems: "center",
+              gap: "6px",
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.background = "rgba(255, 255, 255, 1)";
+              e.currentTarget.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.background = "rgba(255, 255, 255, 0.9)";
+              e.currentTarget.style.boxShadow = "0 2px 4px rgba(0, 0, 0, 0.05)";
+            }}
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              <ChevronRight className="nav-icon" />
-            </button>
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            שמירה כ-PDF
+          </button>{" "}
+            <h1>{slides[currentSlide].title}</h1>
 
-            <span className="slide-counter">
-              {currentSlide + 1} / {slides.length}
-            </span>
+            {slides[currentSlide].content()}
 
-            <button
-              onClick={nextSlide}
-              disabled={currentSlide === slides.length - 1}
-              className={currentSlide === slides.length - 1 ? "disabled" : ""}
-            >
-              <ChevronLeft className="nav-icon" />
-            </button>
+            <div className="navigation">
+              <button
+                onClick={prevSlide}
+                disabled={currentSlide === 0}
+                className={currentSlide === 0 ? "disabled" : ""}
+              >
+                <ChevronRight className="nav-icon" />
+              </button>
+
+              <span className="slide-counter">
+                {currentSlide + 1} / {slides.length}
+              </span>
+
+              <button
+                onClick={nextSlide}
+                disabled={currentSlide === slides.length - 1}
+                className={currentSlide === slides.length - 1 ? "disabled" : ""}
+              >
+                <ChevronLeft className="nav-icon" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
